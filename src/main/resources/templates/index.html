@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="UTF-8">
+<title>Inicio</title>
+</head>
+<body>
+	<h1>Inicio</h1>
+	<a th:href="@{/agregar}">Crear Usuario</a>
+	<div th:if="${usuario !=null and !usuario.empty}">
+		<table border="1">
+			<th>Nombre</th>
+			<th>Apellido</th>
+			<th>email</th>
+			<th>Telefono</th>
+			<th>Tipo de documento</th>
+			<th>numero de documento</th>
+			<th>codigo</th>
+			<th>fecha de ingreso</th>
+			<th>Bici</th>
+			<th>Editar</th>
+			<th>Eliminar</th>
+			</tr>
+
+			<tr th:each="usuario : ${usuarios}">
+				<td th:text="${usuario.nombre}">Nombre</td>
+				<td th:text="${usuario.apellido}">Apellido</td>
+				<td th:text="${usuario.email}">email</td>
+				<td th:text="${usuario.telefono}">Telefono</td>
+				<td th:text="${usuario.tipodocu}">TipoDocumento</td>
+				<td th:text="${usuario.numdoc}">NumDocumento</td>
+				<td th:text="${usuario.bici}">Bicicleta</td>
+				<td th:text="${usuario.fecha}">Fecha</td>
+				<td th:text="${usuario.codigo}">Codigo</td>
+				<td> <a	th:href="@{/editar/} + ${usuario.idUsuario}" th:text="Editar"></a></td>
+
+			</tr>
+
+		</table>
+	</div>
+	<div th:if="${usuarios == null or usuarios.empty}">La lista de
+		usuarios esta vacia.</div>
+</body>
+</html>

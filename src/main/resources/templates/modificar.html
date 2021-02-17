@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="UTF-8">
+<title>Datos del Usuario</title>
+</head>
+<body>
+	<h1>datos del usuario</h1>
+	<a th:href="@{/}">Regresar</a>
+	<br />
+	<form th:action="@{/guardar}" method="post" th:object="${usuario}">
+		<labelfor:"nombre">Nombre:</label>
+		<input type="text" name="nombre" th:field="*{nombre}"/>	
+	</form>
+	<br />
+	<form th:action="@{/guardar}" method="post" th:object="${usuario}">
+		<labelfor:"apellido">Apellido:</label>
+		<input type="text" name="apellido" th:field="*{apellido}"/>	
+	</form>
+	<br />
+	<form th:action="@{/guardar}" method="post" th:object="${usuario}">
+		<labelfor:"email">Email:</label>
+		<input type="email" name="email" th:field="*{email}"/>	
+	</form>
+	<br />
+	<form th:action="@{/guardar}" method="post" th:object="${usuario}">
+		<labelfor:"telefono">Telefono:</label>
+		<input type="tel" name="telefono" th:field="*{telefono}"/>	
+	</form>
+	<br />
+	<form th:action="@{/guardar}" method="post" th:object="${usuario}">
+		<labelfor:"bici">Bicicleta:</label>
+		<input type="text" name="bici" th:field="*{bici}"/>	
+	</form>
+	<br />
+	<form th:action="@{/guardar}" method="post" th:object="${usuario}">
+		<labelfor:"feha">Fecha:</label>
+		<input type="date" name="fecha" th:field="*{fecha}"/>	
+	</form>
+	<br />
+	<form th:action="@{/guardar}" method="post" th:object="${usuario}">
+		<labelfor:"tipodocu">Tipo de documento:</label>
+		<input type="text" name="tipodocu" th:field="*{tipodocu}"/>	
+	</form>
+	<br />
+	<form th:action="@{/guardar}" method="post" th:object="${usuario}">
+		<labelfor:"numdoc">Numero de documento:</label>
+		<input type="text" name="numdoc" th:field="*{numdoc}"/>	
+	</form>
+	<br />
+	<form th:action="@{/guardar}" method="post" th:object="${usuario}">
+		<labelfor:"codigo">Codigo:</label>
+		<input type="text" name="codigo" th:field="*{codigo}"/>	
+		<br/>
+		<input type="submit" name="guardar" value="Guardar"/>
+		<br/>
+	</form>
+</body>
+</html>
